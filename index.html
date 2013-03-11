@@ -1,0 +1,115 @@
+
+<!DOCTYPE HTML> 
+<html lang="en"> 
+  <head> 
+  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  	<link rel="shortcut icon" type="image/ico" href="favicon.ico"> 
+  	<title>LinkedIn | INstant</title> 
+  	<meta name="author" content="Matthew Ng"> 
+  	
+  	<link rel="stylesheet" type="text/css" href="instant.css"> 
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript" src="http://static.stackmob.com/js/stackmob-js-0.8.0-bundled-min.js"></script>
+	
+	<script type="text/javascript">
+StackMob.init({
+    appName: "adviseme",
+    clientSubdomain: "kewlcherrygmailcom",
+    publicKey: "5b823995-a5ef-4426-a73a-d3e5a3d2f576",
+    apiVersion: 0
+});
+</script>
+  	
+    <script type="text/javascript" src="http://platform.linkedin.com/in.js"> 
+      api_key: qnm8d43uhomb
+	  scope: r_fullprofile r_network rw_nus rw_groups
+      onLoad: onLinkedInLoad
+      authorize: true
+    </script> 
+  </head> 
+  
+  <body> 
+    
+    <header> 
+      <!--[if lte IE 9]>
+        <div id="browser-upgrade">
+          Sorry! Internet Explorer is not supported.  Failsauce. (Best experienced in Google Chrome)
+        </div>
+      <![endif]--> 
+      <div id="login"> 
+        <script type="in/login"></script> 
+        <p class="message"></p> 
+      </div> 
+    </header> 
+    
+    <div id="content"> 
+      <div id="search-input"> 
+        <div> 
+          <a href="index.html"> 
+            <img src="instant.png" alt="INstant"> 
+          </a> 
+        </div> 
+        <input id="search-input-field" type="text" value="" maxlength="500" placeholder="Login to experience INstant" autocomplete="off"> 
+        <div id="total-results"></div> 
+      </div> 
+	  <div id="divProfile"></div>
+      <div id="search-results"> 
+        <ol id="search-results-list"> 
+        </ol> 
+      </div> 
+    </div> 
+	
+	
+    
+    <textarea id="search-result-template" class="trimpath-template"> 
+      <li class="profile-result">
+        {if pictureUrl}
+          <img src="${pictureUrl}" class="profile-photo">
+        {else}
+          <img src="icon_no_photo_80x80.png" class="profile-photo">
+        {/if}
+        <div class="name">
+          <strong>
+            <span>${firstName} ${lastName}</span>
+            
+          </strong>
+		  <input type="hidden" class="linkedInUserID" value="${linkedInUserID}" />
+        </div>
+        {if headline}
+          <div class="headline">
+            <strong>${headline}</strong>
+          </div>
+        {/if}
+        <div class="location">
+          ${location.name}
+        </div>
+        <div class="distance">
+          {if (distance == 0 || distance == 1 || distance == 2 || distance == 3)}
+            <img src="http://static02.linkedin.com/scds/common/u/img/icon/degree/icon_degree_${distance}_24x24_v2.png">
+          {/if}
+        </div>
+      </li>
+    </textarea> 
+    
+    <textarea id="no-search-results-template" class="trimpath-template"> 
+      <li class="no-results">
+        <div class="oh-snap"><strong>OH SNAP!</strong></div>
+        <strong>No people match for "${keyword}", delete some characters and try again.</strong>
+       
+      </li>
+    </textarea> 
+    
+    <footer> 
+      <div class="foot-info"> 
+        Built with the new <a href="http://developer.linkedin.com/community/jsapi">LinkedIn JavaScript API</a>.<br><br><script type="in/share"></script> 
+      </div> 
+    </footer> 
+    
+    <script src="http://yui.yahooapis.com/2.8.1/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
+    <script src="scripts/sizzle.js"></script> 
+    <script src="scripts/trimpath-template-1.0.38.js"></script> 
+    <script src="scripts/instant.js"></script> 
+	<script src="scripts/jquery-1.7.1.min.js"></script> 
+	
+  </body> 
+</html> 
