@@ -45,7 +45,7 @@ Instant = (function() {
     
     this.doLogout = function() {
       var searchInput = document.getElementById("search-input-field");
-      searchInput.placeholder = "Login to experience INstant";
+      searchInput.placeholder = "Login to experience Advise";
       searchInput.blur();
       
       this.isLoggedIn = false;
@@ -62,7 +62,7 @@ Instant = (function() {
       if (isSuccess) {
         Instant().isLoggedIn = true;
         YDom.addClass(body, "loggedin");
-        msg = "Welcome to INstant, <strong>"
+        msg = "Welcome to Advice, <strong>"
           + profile.values[0].firstName
           + " "
           + profile.values[0].lastName
